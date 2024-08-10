@@ -16,9 +16,10 @@ const checkArmstrongNumber = (num) => {
     let revNum = 0
     while(dummy>0){
         let digit = dummy%10;
-        revNum+= digit*Math.pow(10,--countDigits);
+        revNum+= Math.pow(digit,countDigits);
         dummy = Math.floor(dummy/10)
     }
+    console.log(revNum)
     return revNum==num ? true : false
 }
 const result = checkArmstrongNumber(153);
