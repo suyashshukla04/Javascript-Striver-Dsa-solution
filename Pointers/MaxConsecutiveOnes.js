@@ -20,21 +20,29 @@ Constraints:
 nums[i] is either 0 or
  */
 
-var findMaxConsecutiveOnes = function(nums){
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findMaxConsecutiveOnes = function(nums) {
     let current = 0;
     let longest = 0;
-    for(let i=0;i<nums.length;i++)
-    {
-        if(nums[i]==1){
-            current++;
-        }
-        else if(nums[i]==0){
-            longest = Math.max(current,longest);
-            current = 0
-        }
-    }
-    return longest
-}
+      
+      for(i=0;i<nums.length;i++)
+      {
+          if(nums[i]===0){
+              current = 0;
+          }
+          else{
+              current++;
+              longest = Math.max(current,longest);
+          }
+      }
+  
+      return longest;
+      
+   
+  }
 
 let nums = [1,0,1,1,0,1]
 let result = findMaxConsecutiveOnes(nums);
